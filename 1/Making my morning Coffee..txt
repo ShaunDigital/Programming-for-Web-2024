@@ -1,0 +1,36 @@
+Making my morning Coffee.
+
+0 - Wake up
+1 - Need Coffee
+2 - Open Coffe Maker Lid
+3 - Remove Filter Basket
+4 - Open Refrigertator
+5 - Remove Coffee
+6 - Remove Creamer
+7 - Remove Sugar
+8 - Remove Britta Pitcher
+9 - Grab Coffe Filter from pack
+10 - Place New filter into filter basket
+11 - Open Coffe Container by removing lid
+12 - Grab Coffee Scoop
+13 - Scoop Coffee into scoop
+14 - Level coffee by running finger across top of scoop
+15 - Repeat Step 13 and 14 - 4x times
+16 - Place coffee filter basket into Coffee Maker
+17 - Grab Britta Pitcher
+18 - Pour Water into Coffe Maker
+19 - Stop pouring at line 4 on water tank
+20 - Push water spout in coffee maker over filter basket
+21 - Close Coffe Maker Lid
+22 - Press Brew button
+23 - Grab Coffe Mug
+24 - Wait Until Coffe finishes brewing
+25 - Pour Fresh Coffe into Coffee Mug
+26 - Add Creamer to taste
+27 - Addd Sugar to taste
+28 - Grab Spoon from Drawer
+29 - Stir Coffee
+30 - Test flavor with small sip
+31 - If satisfactory go to Step 32 Else go back to Step 26
+32 - Place Lid on Coffe Mug
+33 - Continue Morning Routine but now with Coffee
