@@ -1,3 +1,8 @@
-/* eslint-disable no-unused-vars */
-const hello = window.prompt("What is your name?");
-      console.log("Hello, " + name);
+
+
+      let x = 0;
+      function setup() {
+        createCanvas(400, 400);
+        background(100);
+
+          }
