@@ -1,0 +1,19 @@
+{
+  "name": "programming-for-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shaun ritchie",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "programming-for-web-2024"
+  },
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2"
+  }
+}
