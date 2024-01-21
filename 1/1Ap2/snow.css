@@ -1,0 +1,12 @@
+*, *:before, *:after  {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/AdobeStock_283465764.jpeg);
+}
+
+canvas {
+    border: 18px ridge rgb(8, 50, 236);
+    border-radius: 50px;
+}
