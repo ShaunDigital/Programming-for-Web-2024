@@ -12,9 +12,10 @@ function draw() {
   fill(204, 229, 255);
   rect(0, 325, 1000, 600);
   //head
+  fill("#f1f1f1");
   strokeWeight(1);
   stroke(20, 10, 100);
-  ellipse(500, 145, 90);
+  ellipse(500, 142, 95);
   //body middle
   strokeWeight(1);
   stroke(20, 10, 100);
@@ -23,4 +24,12 @@ function draw() {
   strokeWeight(1);
   stroke(20, 10, 100);
   ellipse(500, 445, 210);
+  //hat body
+  fill("#003377");
+  strokeWeight(1);
+  quad(440, 120, 480, 45, 510, 65, 550, 95);
+  // hat brim
+  fill("#003366");
+  strokeWeight(15);
+  line(550, 95, 440, 120);
 }
