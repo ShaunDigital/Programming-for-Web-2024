@@ -76,7 +76,7 @@ function draw() {
   //branches
   noStroke()
   fill(0, 153, 0);
-  triangle(850, 375, 920, 80, 980, 375);
+  triangle(850, 375, 920, 80, 1000, 375);
 
 
 }
