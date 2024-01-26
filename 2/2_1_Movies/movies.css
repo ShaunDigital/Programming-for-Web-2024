@@ -1,0 +1,22 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+#favmovies {
+  text-align: center;
+  font-size: 35px;
+  color: rgb(67, 214, 214);
+  
+}
