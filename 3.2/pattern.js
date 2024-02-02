@@ -2,7 +2,7 @@ function setup() {
     createCanvas(600, 600);
   }
   
-  function createTile(originX, originY, primaryColor, secondaryColor) {
+  function createTile(originX, originY, primaryColor, secondaryColor, circleColor, otherCircleColor) {
     translate(originX, originY);
     fill(primaryColor);
     rect(0, 0, 200, 200);
@@ -30,14 +30,14 @@ function setup() {
     line(200, 150, 0, 200);
     line(200, 170, 0, 200);
     noStroke();
-    fill("#cfd553");
+    fill(circleColor);
     circle(55, 100, 25);
     circle(100, 55, 25);
     circle(100, 100, 40);
     circle(100, 145, 25);
     circle(145, 100, 25);
     noFill();
-    stroke("#1ed2e1");
+    stroke(otherCircleColor);
     strokeWeight(6);
     circle(100, 100, 55);
     circle(55, 100, 65);
@@ -49,15 +49,15 @@ function setup() {
   } 
   
   function draw() {
-  createTile(0, 0, "red", "blue");
-  createTile(0, 200, "yellow", "orange");
-  createTile(0, 200, "purple", "green");
-  createTile(200, -400, "teal", "blue");
-  createTile(200, -0, "blue", "red");
-  createTile(-200, 200, "orange", "purple");
-  createTile(0, 200, "cyan", "red");
-  createTile(200, 0, "blue", "green");
-  createTile(0, -200, "red", "yellow");
+  createTile(0, 0, "red", "blue", "yellow", "green");
+  createTile(0, 200, "yellow", "orange", "green", "blue");
+  createTile(0, 200, "purple", "green", "blue", "turquoise");
+  createTile(200, -400, "teal", "blue", "pink", "cyan");
+  createTile(200, -0, "blue", "red", "orange", "purple");
+  createTile(-200, 200, "orange", "purple", "red", "yellow");
+  createTile(0, 200, "cyan", "red", "yellow", "blue");
+  createTile(200, 0, "blue", "green", "red", "magenta");
+  createTile(0, -200, "red", "yellow", "black", "cyan");
   }
     
   
