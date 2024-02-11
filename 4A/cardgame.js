@@ -20,11 +20,11 @@ function setup () {
     
   console.log(myRect);
 }
-// i researched a lot to find out why i was getting clicks outside of the rectangle with Width and Height and not inside them. I found centerX and Y and that worked. I also added the id to the middle of the condole log so it would read more like a sentence.
+// i researched a lot to find out why i was getting clicks outside of the rectangle with Width and Height and not inside them. I found centerX and Y and that worked. I also added the id to the middle of the console log so it would read more like a sentence.
 function mousePressed() {
     for(let j = 0; j < myRect.length; j++) {
-        let centerX = myRect[j].x + rectWidth / 2; 
-        let centerY = myRect[j].y + rectHeight /2;
+        let centerX = myRect[j].x + rectWidth / 2; // i think the distance now has to be very close to center
+        let centerY = myRect[j].y + rectHeight /2; // i would like to adjust it so it can be toward the edge too
         let distance = dist(mouseX, mouseY, centerX, centerY);
             if (distance < rectWidth / 2) {
                 console.log("Card " + myRect[j].id + " has been clicked");
