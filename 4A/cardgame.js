@@ -1,16 +1,22 @@
-let startingX = 120;
-let startingY = 50;
+let startingX = 50;
+let startingY = 25;
 let rectWidth = 100;
 let rectHeight = 150;
 let myRect = [];
 function setup () {
     createCanvas (1000, 625);
     background("blue");
- for (let i = 0; i < 4; i++) {
-    rect(startingX, startingY, rectWidth, rectHeight );
-    myRect.push({ x: startingX, y: startingY, id: i});
-    startingX += 200;
- }   
+    for (let k = 0; k < 3; k++) {
+        for (let i = 0; i < 4; i++) {
+            rect(startingX, startingY, rectWidth, rectHeight);
+            myRect.push({ x: startingX, y: startingY, id: i + k * 4});
+            startingX += 200;
+         }
+         startingX = 50;
+         startingY += 200;
+         
+    }
+    
   console.log(myRect);
 }
 
