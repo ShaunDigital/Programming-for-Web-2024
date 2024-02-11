@@ -8,7 +8,7 @@ function setup() {
     createCanvas(500, 500); 
     rectY = random(height - rectHeight);   
     speed = random(1, 3);
-;  }
+  }
 
   function draw () {
     background("#9a53d5");
