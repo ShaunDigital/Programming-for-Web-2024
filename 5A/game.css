@@ -1,0 +1,36 @@
+#scorepanel {
+    position: absolute;
+    top: 50px;
+    right: 400px;
+    border: 5px solid white;
+    margin: 50px;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    height: 250px;
+    
+    
+
+}
+
+#playButton,
+#restartButton {
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#playButton:hover,
+#restartButton:hover {
+    background-color: white;
+    color: black;
+}
