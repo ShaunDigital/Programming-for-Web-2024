@@ -12,10 +12,14 @@
     text-align: center;
     color: white;
     font-size: 20px;
-    height: 250px;
-    
+    height: 250px;  
     
 
+}
+
+#win {
+    font-size: 25px;
+    color:rgb(241, 7, 210);
 }
 
 #playButton,
