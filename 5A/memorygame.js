@@ -158,7 +158,7 @@ function shuffleArray(array) {
   }
   return array;
 }
-// trying to get the score and attempts to work in my div.
+// trying to get the score and attempts to  in my div.
 function updateScoreDisplay() {
     const matchesParagraph = document.getElementById("matches");
     const attemptsParagraph = document.getElementById("attempts");
