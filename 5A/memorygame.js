@@ -3,42 +3,48 @@ const UP = "UP";
 let startingX = 50;
 let startingY = 40;
 let cards = [];
-const gameState = {
-
-};
+const gameState = {};
 let cardFaceArray = [];
-let cardBack; 
+let cardBack;
 function preload() {
-    cardBack = loadImage("images/CardBack-01.png");
-    cardFaceArray = [
-        loadImage("images/Apple Front-01.png"),
-        loadImage("images/Banana Front-01.png"),
-        loadImage("images/Cherry Front-01.png"),
-        loadImage("images/Kiwi Front-01.png"),
-        loadImage("images/Strawberry Front-01.png"),
-        loadImage("images/Watermelon Front-01.png")
-    ]
-    
+  cardBack = loadImage("images/CardBack-01.png");
+  cardFaceArray = [
+    loadImage("images/Apple Front-01.png"),
+    loadImage("images/Banana Front-01.png"),
+    loadImage("images/Cherry Front-01.png"),
+    loadImage("images/Kiwi Front-01.png"),
+    loadImage("images/Strawberry Front-01.png"),
+    loadImage("images/Watermelon Front-01.png"),
+  ];
 }
 function setup() {
   createCanvas(1000, 625);
   background("blue");
+  let selectedFaces = [];
+  for (let z = 0; z < 6; z++) {
+    const randomIdx = floor(random(cardFaceArray.length));
+    const face = cardFaceArray[randomIdx];
+    selectedFaces.push(face);
+    selectedFaces.push(face);
+    cardFaceArray.splice(randomIdx, 1);
+  }
+  selectedFaces = shuffleArray(selectedFaces);
   for (let j = 0; j < 3; j++) {
     for (let i = 0; i < 4; i++) {
-      cards.push(new Card(startingX, startingY, cardFaceArray[0]));
+      const faceImage = selectedFaces.pop();
+      cards.push(new Card(startingX, startingY, faceImage));
       startingX += 150;
     }
-    startingX = 50; 
+    startingX = 50;
     startingY += 200;
   }
 }
 function mousePressed() {
-    for (let k = 0; k < cards.length; k++) {
-        if(cards[k].didHit(mouseX, mouseY)) {
-            console.log(flipped, cards[k]);
-        }
+  for (let k = 0; k < cards.length; k++) {
+    if (cards[k].didHit(mouseX, mouseY)) {
+      console.log(flipped, cards[k]);
     }
-  
+  }
 }
 
 class Card {
@@ -46,7 +52,7 @@ class Card {
     this.x = x;
     this.y = y;
     this.width = 100;
-    this.height = 150;    
+    this.height = 150;
     this.face = DOWN;
     this.cardFaceImage = cardFaceImage;
     this.show();
@@ -83,4 +89,16 @@ class Card {
     }
     this.show();
   }
+}
+
+function shuffleArray(array) {
+  let counter = array.length;
+  while (counter > 0) {
+    const idx = Math.floor(Math.random() * counter);
+    counter--;
+    const temp = array[counter];
+    array[counter] = array[idx];
+    array[idx] = temp;
+  }
+  return array;
 }
