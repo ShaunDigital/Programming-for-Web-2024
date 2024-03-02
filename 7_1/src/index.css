@@ -1,5 +1,5 @@
 body {
-  max-width: 300px;
+  max-width: 500px;
   width: 100%;
   margin: 0 auto;
   padding: 10px;
@@ -7,14 +7,31 @@ body {
   
 }
 
-.h1 {
+h2 {
   font-size: 30px;
-  color: darkslateblue;
+  color: rgb(40, 13, 218);
+  text-align: center;
 }
 
 .camelid-image {
   width: 400px;
   height: 300px;
-  border: 4px  solid black;
+  border: 4px  solid rgb(9, 13, 253);
   border-radius: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
 }
+
+.type {
+  color: rgb(40, 13, 218);
+  font-size: 20px;
+  text-align: center;
+  
+}
+.fact {
+  text-align: center;
+  color: rgb(40, 13, 218);
+  font-size: 20px;
