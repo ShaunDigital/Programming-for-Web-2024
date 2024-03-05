@@ -1,5 +1,5 @@
 import "./App.css";
-import { GameRow } from "./GameRow";
+import { GameRow } from "./gameRow";
 function App() {
   const favoriteGames = [
     {
