@@ -1,0 +1,95 @@
+import "./styles.css";
+
+export default function App() {
+  const llamaArray = [
+    {
+      rank: 1,
+      name: "Barack O. Llama",
+    },
+    {
+      rank: 2,
+      name: "Llamanade",
+    },
+    {
+      rank: 3,
+      name: "Carl",
+    },
+    {
+      rank: 4,
+      name: "Shama Llama Ding Dong",
+    },
+    {
+      rank: 5,
+      name: "Drama Llama",
+    },
+    {
+      rank: 6,
+      name: "No Probllama",
+    },
+    {
+      rank: 7,
+      name: "fluffy",
+    },
+    {
+      rank: 8,
+      name: "LLAMACORN",
+    },
+    {
+      rank: 9,
+      name: "Kuzco",
+    },
+    {
+      rank: 10,
+      name: "Llama Bean",
+    },
+    {
+      rank: 11,
+      name: "Bahama Llama",
+    },
+    {
+      rank: 12,
+      name: "Tina",
+    },
+    {
+      rank: 13,
+      name: "Llamanator",
+    },
+    {
+      rank: 14,
+      name: "Giraffe Sheep",
+    },
+    {
+      rank: 15,
+      name: "Llamabogini",
+    },
+  ];
+
+  return (
+    <div>
+      <h2 style={{ textAlign: "center" }}>No Drama Llama's</h2>
+      {llamaArray.map((llama, index) => (
+        <div
+          key={llama.name}
+          style={{
+            backgroundColor: index % 2 === 0 ? "blueviolet" : "transparent",
+            textAlign: "center",
+          }}
+        >
+          <p
+            style={{
+              fontWeight: llama.name.toLowerCase().includes("llama")
+                ? "bold"
+                : "normal",
+              fontStyle: llama.name.toLowerCase().includes("llama")
+                ? "italic"
+                : "normal",
+            }}
+          >
+            {llama.name}
+          </p>
+          <p>{llama.rank}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
