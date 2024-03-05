@@ -3,14 +3,6 @@ import { GameRow } from "./gameRow";
 function App() {
   const favoriteGames = [
     {
-      gameTitle: "Fallout 3",
-      publisher: ["Bethesda Softworks"],
-      gameType: "Modern RPG",
-      completed: true,
-      platform: "PS3",
-      image: "/Fallout_3_cover_art.PNG"
-    },
-    {
       gameTitle: "Final Fantasy VIII",
       publisher: ["Square Enix"],
       gameType: "Classic RPG",
@@ -18,6 +10,14 @@ function App() {
       platform: "PS1",
       image: "/Final_Fantasy_8_ntsc-front.png"
     },
+    {
+      gameTitle: "Fallout 3",
+      publisher: ["Bethesda Softworks"],
+      gameType: "Modern RPG",
+      completed: true,
+      platform: "PS3",
+      image: "/Fallout_3_cover_art.PNG"
+    },    
     {
       gameTitle: "Fallout New Vegas",
       publisher: ["Obsidian", "Bethesda"],
@@ -30,7 +30,7 @@ function App() {
       gameTitle: "Destiny 2",
       publisher: ["Bungie"],
       gameType: "MMORPG",
-      completed: false,
+      completed: true,
       platform: "PC",
       image: "/Destiny_2_(artwork).png"
     },
@@ -46,7 +46,7 @@ function App() {
       gameTitle: "The Witcher 3: Wild Hunt",
       publisher: ["CD Projekt"],
       gameType: "Action RPG",
-      completed: false,
+      completed: true,
       platform: "PC",
       image: "/Witcher_3_cover_art.png"
     },
@@ -54,8 +54,7 @@ function App() {
   return (
     <>
     <h1>My Favorite Video Games</h1>
-    <p>Show Games Here</p>
-    <table className="game-table">
+        <table className="game-table">
       <thead>
         <tr>
           <th>Game Title</th>
@@ -69,7 +68,8 @@ function App() {
       <tbody>
           {favoriteGames.map((game, index) => {
             return (
-               <GameRow               
+               <GameRow 
+               key={game.image}              
                gameTitle={game.gameTitle}
                publisher={game.publisher}
                gameType={game.gameType}

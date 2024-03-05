@@ -13,7 +13,7 @@ export function GameRow({
       <td>{gameType}</td>
       <td>{completed && "yes"}</td>
       <td>{platform}</td>
-      <td><img src={image} alt={gameTitle} />
+      <td><img src={image} alt={gameTitle} className="game-image"/>
       </td>
     </tr>
   );
