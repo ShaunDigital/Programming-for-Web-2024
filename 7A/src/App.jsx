@@ -48,7 +48,7 @@ function App() {
       gameType: "Action RPG",
       completed: false,
       platform: "PC",
-      image: "/"
+      image: "/Witcher_3_cover_art.png"
     },
   ]
   return (
@@ -69,13 +69,13 @@ function App() {
       <tbody>
           {favoriteGames.map((game, index) => {
             return (
-               <GameRow
-               key={game.image}
-               game={game.gameTitle}
+               <GameRow               
+               gameTitle={game.gameTitle}
                publisher={game.publisher}
                gameType={game.gameType}
                completed={game.completed}
-               platform={game.platform}               
+               platform={game.platform} 
+               image={game.image}              
                />
             )
           })}
