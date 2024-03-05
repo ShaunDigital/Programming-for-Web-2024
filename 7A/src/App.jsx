@@ -8,7 +8,7 @@ function App() {
       gameType: "Classic RPG",
       completed: true,
       platform: "PS1",
-      image: "/Final_Fantasy_8_ntsc-front.png"
+      image: "./Final_Fantasy_8_ntsc-front.png"
     },
     {
       gameTitle: "Fallout 3",
@@ -16,7 +16,7 @@ function App() {
       gameType: "Modern RPG",
       completed: true,
       platform: "PS3",
-      image: "/Fallout_3_cover_art.PNG"
+      image: "./Fallout_3_cover_art.PNG"
     },    
     {
       gameTitle: "Fallout New Vegas",
@@ -24,7 +24,7 @@ function App() {
       gameType: "Modern RPG",
       completed: true,
       platform: "PS3",
-      image: "/Fallout_New_Vegas.png"
+      image: "./Fallout_New_Vegas.png"
     },
     {
       gameTitle: "Destiny 2",
@@ -32,7 +32,7 @@ function App() {
       gameType: "MMORPG",
       completed: true,
       platform: "PC",
-      image: "/Destiny_2_(artwork).png"
+      image: "./Destiny_2_(artwork).png"
     },
     {
       gameTitle: "Remnant- From the Ashes",
@@ -40,7 +40,7 @@ function App() {
       gameType: "Survival Action RPG",
       completed: true,
       platform: "PC",
-      image: "/Remnant_From_the_Ashes_cover_art.png"
+      image: "./Remnant_From_the_Ashes_cover_art.png"
     },
     {
       gameTitle: "The Witcher 3: Wild Hunt",
@@ -48,7 +48,7 @@ function App() {
       gameType: "Action RPG",
       completed: true,
       platform: "PC",
-      image: "/Witcher_3_cover_art.png"
+      image: "./Witcher_3_cover_art.png"
     },
   ]
   return (
