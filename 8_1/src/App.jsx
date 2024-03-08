@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Dog from "./assets/Dog.webp";
-import Cat from "./assets/Cat.webp";
+import alpaca from "./assets/alpaca.jpg";
+import llama from "./assets/llama.jpg";
 import Animals from "./Animals";
 function App() {
-  const [pet, setPet] = useState(Dog)
+  const [pet, setPet] = useState(alpaca)
 
   return (
     <>
@@ -14,16 +14,16 @@ function App() {
       <h1>Pets</h1>
       <div className="card">
         <button onClick={() => {
-          console.log("click dog");
-          setPet(Dog);
+          console.log("click alpaca");
+          setPet(alpaca);
           }}>  
-          Dog        
+          Alpaca      
         </button>
         <button onClick={() => {
-          console.log("click cat");
-          setPet(Cat);
+          console.log("click llama");
+          setPet(llama);
           }}> 
-          Cat         
+          LLama         
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
