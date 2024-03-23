@@ -7,17 +7,32 @@ function App() {
   const [address, setAddress] = useState("");
   const [location, setLocation] = useState("");
   const [country, setCountry] = useState("");
-  const [favColor, setFavColor] = useState("");
-  const [whiteChecked, setWhiteChecked] = useState(false);
-  const [blackChecked, setBlackChecked] = useState(false);
-  const [grayChecked, setGrayChecked] = useState(false);
-  const [brownChecked, setBrownChecked] = useState(false);
-  const [fancyChecked, setFancyChecked] = useState(false);
+  const [colors, setColors] = useState([]);
+
+  function handleCheckbox(e) {
+    const color = e.target.id;
+    setColors(prevColors => {
+      if (prevColors.includes(color)) {
+        return prevColors.filter(c => c !== color);
+      } else {
+        return [...prevColors, color];
+      }
+    });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log({ firstName, lastName, address, location, country, favColor, whiteChecked,
-      blackChecked, grayChecked, brownChecked, fancyChecked, });
+    const formData = {
+      firstName,
+      lastName,
+      address,
+      location,
+      country,
+      colors
+    };
+    console.log(formData); // Optional: Log the form data to the console
+    const formOutput = JSON.stringify(formData, null, 2);
+    document.getElementById("formOutput").textContent = formOutput;
   }
 
   return (
@@ -76,57 +91,54 @@ function App() {
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>
-          <div>
-            <h2>What is your favorite Alpaca Color?</h2>
-            </div>
-          <div className="checkbox-group">
-          <label htmlFor="favColor">White</label>
-          <input
-            id="favColor"
-            type="checkbox"
-            name="white"
-            checked={whiteChecked}
-            onChange={(e) => setWhiteChecked(e.target.checked)}            
-          />
-        
-        
-          <label htmlFor="favColor">Black</label>
-          <input
-            id="favColor"
-            type="checkbox"
-            name="black"
-            checked={blackChecked}
-            onChange={(e) => setBlackChecked(e.target.checked)}
-          />
-        
-        <label htmlFor="favColor">Gray</label>
-          <input
-            id="favColor"
-            type="checkbox"
-            name="gray"
-            checked={grayChecked}
-            onChange={(e) => setGrayChecked(e.target.checked)}
-          />
-          <label htmlFor="favColor">Brown</label>
-          <input
-            id="favColor"
-            type="checkbox"
-            name="Brown"
-            checked={brownChecked}
-            onChange={(e) => setBrownChecked(e.target.checked)}
-          />
-          <label htmlFor="favColor">Fancy</label>
-          <input
-            id="favColor"
-            type="checkbox"
-            name="fancy"
-            checked={fancyChecked}
-            onChange={(e) => setFancyChecked(e.target.checked)}
-          />
-          </div>
-          <button type="submit">Register</button>
         </fieldset>
-        
+        <fieldset>
+          <legend>What is your favorite Alpaca Color?</legend>
+          <div className="checkbox-group">
+            <label htmlFor="white">White</label>
+            <input
+              id="white"
+              type="checkbox"
+              name="colors"
+              checked={colors.includes("white")}
+              onChange={handleCheckbox}
+            />
+            <label htmlFor="black">Black</label>
+            <input
+              id="black"
+              type="checkbox"
+              name="colors"
+              checked={colors.includes("black")}
+              onChange={handleCheckbox}
+            />
+            <label htmlFor="gray">Gray</label>
+            <input
+              id="gray"
+              type="checkbox"
+              name="colors"
+              checked={colors.includes("gray")}
+              onChange={handleCheckbox}
+            />
+            <label htmlFor="brown">Brown</label>
+            <input
+              id="brown"
+              type="checkbox"
+              name="colors"
+              checked={colors.includes("brown")}
+              onChange={handleCheckbox}
+            />
+            <label htmlFor="fancy">Fancy</label>
+            <input
+              id="fancy"
+              type="checkbox"
+              name="colors"
+              checked={colors.includes("fancy")}
+              onChange={handleCheckbox}
+            />
+          </div>
+        </fieldset>
+        <button type="submit">Register</button>
+        <div className="form-output" id="formOutput"></div>
       </form>
     </>
   );

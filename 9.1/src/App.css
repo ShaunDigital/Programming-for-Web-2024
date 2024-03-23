@@ -37,10 +37,11 @@ input[type="checkbox"] {
 }
 
 button {
+  display: block;
   background-color: #354e75;
   color: #40c8f1;
   border: none;
-  margin: 25px;
+  margin: 0 auto;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -68,4 +69,13 @@ button:active {
 
 .checkbox-group input[type="checkbox"] {
   margin-right: 5px;
+}
+
+.form-output {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2008f7;
+  border: 1px solid #ccc;
+  color: aliceblue;
+  font-size: 15px;
 }
