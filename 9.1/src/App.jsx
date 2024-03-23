@@ -35,6 +35,9 @@ function App() {
     document.getElementById("formOutput").textContent = formOutput;
   }
 
+  const [firstNameError, setFirstNameError] = useState(null)
+  const [lastNameError, setlastNameError] = useState(null)
+
   return (
     <>
       <h1>Alpaca Fan Club Registration</h1>
@@ -42,24 +45,46 @@ function App() {
         <fieldset>
           <legend>Personal Information</legend>
           <div>
-            <label htmlFor="firstName">First Name</label>
+            <label className="required" htmlFor="firstName">First Name</label>
             <input
               id="firstName"
               type="text"
               name="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              onBlur={() => {
+                if(!firstName) {
+                  setFirstNameError("This Field Required")
+                }
+              }}
             />
+            {firstNameError && (
+              <>
+              <br />
+              <span className="error">{firstNameError}</span>
+              </>
+            )}
           </div>
           <div>
-            <label htmlFor="lastName">Last Name</label>
+            <label className="required" htmlFor="lastName">Last Name</label>
             <input
               id="lastName"
               type="text"
               name="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              onBlur={() => {
+                if(!firstName) {
+                  setlastNameError("This Field Required")
+                }
+              }}
             />
+            {lastNameError && (
+              <>
+              <br />
+              <span className="error">{lastNameError}</span>
+              </>
+            )}
           </div>
           <div>
             <label htmlFor="address">Address</label>
