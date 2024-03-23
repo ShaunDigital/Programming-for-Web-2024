@@ -79,7 +79,7 @@ function App() {
           <div>
             <h2>What is your favorite Alpaca Color?</h2>
             </div>
-          <div>
+          <div className="checkbox-group">
           <label htmlFor="favColor">White</label>
           <input
             id="favColor"
@@ -124,8 +124,9 @@ function App() {
             onChange={(e) => setFancyChecked(e.target.checked)}
           />
           </div>
+          <button type="submit">Register</button>
         </fieldset>
-        <button type="submit">Register</button>
+        
       </form>
     </>
   );

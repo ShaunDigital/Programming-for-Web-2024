@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: monospace;
+}
+ h1 {
   text-align: center;
+ }
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #1f49d4;
+  border-radius: 5px;
+  background-color: #15f7f7;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+fieldset {
+  border: 2px solid white;
+  margin: 20px;
+  padding: 50px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+legend {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #354e75;
+  color: #40c8f1;
+  border: none;
+  margin: 25px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3d1eee;
+}
+
+button:active {
+  box-shadow: 0px 2px 4px rgba(28, 21, 134, 0.562);
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Custom styles for checkboxes */
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 10px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.checkbox-group input[type="checkbox"] {
+  margin-right: 5px;
 }
