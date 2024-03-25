@@ -7,8 +7,9 @@ export function NewGamesForm() {
     publisher: "",
     gameType: "",
     completed: "",
-    platform: [],
+    platform: ["ps1", "ps2", "ps3", "ps4", "ps5", "Xbox 360", "Xbox One"],
     image: "",
+    gameDescription: "",
   };
   const [newGame, setNewGame] = useState(initialGameSetting);
 
@@ -17,9 +18,9 @@ export function NewGamesForm() {
       const newPlatform = e.target.id;
       if (newGame.platform.includes(newPlatform)) {
         const filteredArray = newGame.platform.filter((platform) => {
-          return platform !== newPLatform;
+          return platform !== newPlatform;
         });
-        setNewPLatform((prevGame) => {
+        setNewGame((prevGame) => {
           return {
             ...prevGame,
             platform: filteredArray,
@@ -120,13 +121,33 @@ export function NewGamesForm() {
             />
           </div>
           <div className="form-group-checkbox-group">
+            <label htmlFor="platform">PS4</label>
+            <input
+              type="checkbox"
+              name="platform"
+              id="ps4"
+              onChange={changeHandler}
+              checked={newGame.platform.includes("ps4")}
+            />
+          </div>
+          <div className="form-group-checkbox-group">
+            <label htmlFor="platform">PS5</label>
+            <input
+              type="checkbox"
+              name="platform"
+              id="ps5"
+              onChange={changeHandler}
+              checked={newGame.platform.includes("ps5")}
+            />
+          </div>
+          <div className="form-group-checkbox-group">
             <label htmlFor="platform">XBOX 360</label>
             <input
               type="checkbox"
               name="platform"
-              id="xbox-360"
+              id="xbox 360"
               onChange={changeHandler}
-              checked={newGame.platform.includes("xbox", "360")}
+              checked={newGame.platform.includes("xbox 360")}
             />
           </div>
           <div className="form-group-checkbox-group">
@@ -134,9 +155,9 @@ export function NewGamesForm() {
             <input
               type="checkbox"
               name="platform"
-              id="xbox-one"
+              id="Xbox One"
               onChange={changeHandler}
-              checked={newGame.platform.includes("Xbox", "One")}
+              checked={newGame.platform.includes("Xbox One")}
             />
           </div>
           <div className="form-group-checkbox-group">
@@ -146,13 +167,23 @@ export function NewGamesForm() {
               name="platform"
               id="pc"
               onChange={changeHandler}
-              checked={newGame.platform.includes("PC")}
+              checked={newGame.platform.includes("pc")}
             />
           </div>
         </fieldset>
       </fieldset>
       <fieldset>
-        <legend>Game Collection Details</legend>
+        <legend>YOUR Favorite Game</legend>
+          <div className="form-group">
+            <label htmlFor="gameDescription">Why is this your favorite game?</label>
+            <textarea
+            name="gameDescription"
+            id="gameDescription"
+            value={newGame.gameDescription}
+            onChange={changeHandler}
+            ></textarea>
+            </div>
+
       </fieldset>
       <button type="submit">Add Game</button>
     </form>
