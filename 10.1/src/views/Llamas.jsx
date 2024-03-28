@@ -1,8 +1,9 @@
+import LlamaPic from "../assets/Llama.jpg"
 export function Llamas() {
   return (
     <>
       <h1>Llamas</h1>
-      {/* <!-- please include a llama picture here! --> */}
+      <img src={LlamaPic} alt="LLama" />
       <p>
         Lamoids, or llamas (as they are more generally known as a group),
         consist of the vicuña (Vicugna vicugna, prev. Lama vicugna), guanaco
