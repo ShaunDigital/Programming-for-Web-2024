@@ -1,0 +1,38 @@
+.new-games-form-wrapper {
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 25px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .form-group.error .error-message {
+    display: block;
+    margin: 10px;
+  }
+
+  .form-group-checkbox-group {
+    display: inline-block;
+    margin-right: 20px; 
+  }
+
+  .form-group {
+    margin-bottom: 10px; 
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%; 
+    padding: 8px; 
+    box-sizing: border-box;
+  
+  .form-group label {
+    display: block; 
+    margin-bottom: 8px;
+  }

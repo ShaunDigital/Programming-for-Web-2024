@@ -1,0 +1,14 @@
+.collection {
+    max-width: 900px;
+    margin-left: 215px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.page {
+    max-width: 1360px;
+    margin: 0 auto;
+    
+}
