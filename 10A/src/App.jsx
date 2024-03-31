@@ -1,29 +1,4 @@
-import { useState } from "react";
-import "./App.css";
-import Masthead from "./Masthead/Masthead";
-import ItemCard from "./ItemCard/ItemCard";
-import { NewGamesForm } from "./newgamesform/NewGamesForm";
-import {nanoid} from "nanoid";
 
-function App() {
-  const [games, setGames] = useState();
-console.log(games);
-  function deleteCard(id) {
-    console.log("delete me", id);
-    const updatedArray = games.filter((favoriteGames) => {
-      return favoriteGames.id !== id;
-    })
-    setGames(updatedArray);
-  }
-
-  function duplicateCard(id) {
-    console.log("duplicate me", id)
-    const matchingGame = games.find((favoriteGames) => {
-      return favoriteGames.id === id
-    });
-    const updatedGame = {...matchingGame, id: nanoid() }
-    setGames([...games, updatedGame]);
-  }
 
   return (
     <div className="page">
@@ -34,18 +9,17 @@ console.log(games);
         {/* use ItemCard component in loop */}
         {games.map((favoriteGames) => {
           return (
-            <ItemCard 
-            key={favoriteGames.id}
-            deleteFn={deleteCard}
-            duplicateFn={duplicateCard}
-            {...favoriteGames}
-          
-             />
-          )
+            <ItemCard
+              key={favoriteGames.id}
+              deleteFn={deleteCard}
+              duplicateFn={duplicateCard}
+              {...favoriteGames}
+            />
+          );
         })}
-        </div>
-        <hr />
-        <NewGamesForm />
+      </div>
+      <hr />
+      <NewGamesForm />
     </div>
   );
 }
