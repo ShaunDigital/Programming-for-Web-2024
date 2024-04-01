@@ -1,15 +1,12 @@
 import { useState } from "react";
-import "../App.css";
 import Masthead from "../Masthead/Masthead";
 import ItemCard from "../ItemCard/ItemCard";
 import { NewGamesForm } from "../newgamesform/NewGamesForm";
 import { nanoid } from "nanoid";
 import gameData from "../assets/gameData.json";
 
-
-export function Home() {
-  function App() {
-    const [games, setGames] = useState();
+export function Home() {  
+    const [games, setGames] = useState(gameData);
 
     function deleteCard(id) {
       console.log("delete me", id);
@@ -50,4 +47,4 @@ export function Home() {
       </div>
     );
   }
-}
+
