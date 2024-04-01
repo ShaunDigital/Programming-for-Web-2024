@@ -12,3 +12,43 @@
     margin: 0 auto;
     
 }
+
+
+.games-detail-container {
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #63d6f3;
+    border-radius: 15px;  
+    display: flex; 
+    flex-direction: row;
+}
+
+.games-detail-container h1 {
+    font-size: 32px;
+    margin: 20px;
+    white-space: nowrap;
+}
+
+.games-detail-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.games-detail-container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 12px;
+}
+
+.games-detail-container a {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #5009f3;
+}
+
+.games-detail-container a:hover {
+    text-decoration: underline;
+}
