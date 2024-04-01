@@ -43,7 +43,7 @@ export function Home() {
           })}
         </div>
         <hr />
-        <NewGamesForm />
+        {/*<NewGamesForm />*/}
       </div>
     );
   }
