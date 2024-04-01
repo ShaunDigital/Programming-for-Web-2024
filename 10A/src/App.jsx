@@ -1,26 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Home } from "./views/Home";
+import { GameDetail } from "./views/GamesDetail";
 
-
+function App() {
   return (
-    <div className="page">
-      {/*Masthead*/}
-      <Masthead />
-      <div className="collection">
-        {/* game collection map goes here*/}
-        {/* use ItemCard component in loop */}
-        {games.map((favoriteGames) => {
-          return (
-            <ItemCard
-              key={favoriteGames.id}
-              deleteFn={deleteCard}
-              duplicateFn={duplicateCard}
-              {...favoriteGames}
-            />
-          );
-        })}
-      </div>
-      <hr />
-      <NewGamesForm />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path=":id" element={<GameDetail />} />
+    </Routes>
   );
 }
 
