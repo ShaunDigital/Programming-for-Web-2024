@@ -1,57 +1,32 @@
-// A Class to describe a "doorbell" (really a button)
-class Doorbell {
-  constructor(x_, y_, r_) {
-    // Location and size
-    this.x = x_;
-    this.y = y_;
-    this.r = r_;
-  }
-  // Is a point inside the doorbell? (used for mouse rollover, etc.)
-  contains(mx, my) {
-    return dist(mx, my, this.x, this.y) < this.r;
-  }
-
-  // Show the doorbell (hardcoded colors, could be improved)
-  display(mx, my) {
-    if (this.contains(mx, my)) {
-      fill(100);
-    } else {
-      fill(175);
-    }
-    stroke(0);
-    strokeWeight(4);
-    ellipseMode(RADIUS);
-    ellipse(this.x, this.y, this.r, this.r);
-  }
-}
-
-// A sound file object
-let dingdong;
-
-// A doorbell object (that will trigger the sound)
-let doorbell;
-
+let mySound1;
+let mySound2;
+let mySound3;
 function preload() {
-  // Load the sound file
-  dingdong = loadSound('assets/doorbell.mp3');
+  mySound1 = loadSound("./assets/sample_1_p5.mp3");
+  mySound2 = loadSound("./assets/sample_2_p5.mp3");
+  mySound3 = loadSound("./assets/sample_3_p5.mp3");
 }
 
 function setup() {
-  createCanvas(200, 200);
-
-  // Create a new doorbell
-  doorbell = new Doorbell(width / 2, height / 2, 32);
+  createCanvas(1300, 600);
+  background(200);
+  text("tap here to play", 10, 20);
+  drawRectangle(50, 50, 50, 50, "Rect1");
+  drawRectangle(150, 50, 50, 50, "Rect2");
+  drawRectangle(250, 50, 50, 50, "Rect3");
 }
-
-function draw() {
-  background(255);
-  // Show the doorbell
-  doorbell.display(mouseX, mouseY);
+function drawRectangle(x, y, w, h, label) {
+  rect(x, y, w, h);
+  text(label, x + 10, y + 20);
 }
 
 function mousePressed() {
-  // If the user clicks on the doorbell, play the sound!
-  if (doorbell.contains(mouseX, mouseY)) {
-    dingdong.play();
+  // Check if the mouse is inside the rectangle
+  if (mouseX > 50 && mouseX < 100 && mouseY > 50 && mouseY < 100) {
+    mySound1.play();
+  } else if (mouseX > 150 && mouseX < 200 && mouseY > 50 && mouseY < 100) {
+    mySound2.play();
+  } else if (mouseX > 250 && mouseX < 300 && mouseY > 50 && mouseY < 100) {
+    mySound3.play();
   }
 }
