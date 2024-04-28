@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#canvasText {
+  position: absolute;
+  top: 390px;
+  left: 150px;
+  width: 250px;
+  color: rgb(241, 179, 8);
+  font-size: 12px;
+  padding: 15px;
+  z-index: 1; 
+  border: 1px solid white;
+}
+
