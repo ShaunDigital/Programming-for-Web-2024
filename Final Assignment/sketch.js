@@ -26,7 +26,7 @@ function setup() {
       );
     }
   }
-
+// this is where my visualization will be rendered
   waveformWindow = createGraphics(400, 300);
   waveformWindow.background(0);
 }
@@ -67,7 +67,7 @@ class Pad {
     this.analyzer = new p5.Amplitude();
     this.analyzer.setInput(this.osc);
 
-    // FFT setup
+    // FFT setup to get sound from the Oscillator input
     this.fft = fft;
     this.fft.setInput(this.osc);
   }
@@ -79,7 +79,7 @@ class Pad {
     noStroke();
     rect(this.x, this.y, 150, 150);
 
-    // Draw border with offset
+    // Draw border with offset around each pad
     strokeWeight(2);
     stroke("white");
     noFill();
@@ -90,7 +90,7 @@ class Pad {
       this.padSize - 2 * this.borderOffset
     );
 
-    // Draw pad
+    // Draw pad visualizer over top of the existing pad
     fill("yellow");
     noStroke();
     rect(
@@ -100,7 +100,7 @@ class Pad {
       levelHeight
     );
 
-    // Update waveform window
+    // Update waveform window so it renders in real time
     this.updateWaveform();
   }
 
