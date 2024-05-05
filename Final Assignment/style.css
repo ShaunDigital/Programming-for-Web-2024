@@ -38,7 +38,7 @@ html, body {
   width: 150px; /* Set a specific width for the dropdown */
   position: absolute; /* Position the dropdown absolutely within the container */
   top: 250px ; /* Align the dropdown */
-  left: 650px; /* Align the dropdown */
+  left: 750px; /* Align the dropdown */
 }
 
 /* Style the options within the select element */

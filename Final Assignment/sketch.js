@@ -19,7 +19,7 @@ function setup() {
     for (let j = 0; j < freqs[i].length; j++) {
       pads.push(
         new Pad(
-          900 + 160 * j,
+          1000 + 160 * j,
           100 + 160 * i,
           freqs[i][j],
           keys[i + j * freqs[i].length]
@@ -44,7 +44,7 @@ function draw() {
 
   // Draw waveform window
 
-  image(waveformWindow, 100, 50);
+  image(waveformWindow, 200, 50);
 }
 
 function keyPressed() {
