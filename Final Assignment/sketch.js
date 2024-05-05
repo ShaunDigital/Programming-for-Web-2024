@@ -7,6 +7,7 @@ let keys = [81, 87, 69, 82, 65, 83, 68, 70, 90, 88, 67, 86];
 let pads = [];
 let waveformWindow;
 let fft;
+let waveformType = "sine";   // default sound
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -18,7 +19,7 @@ function setup() {
     for (let j = 0; j < freqs[i].length; j++) {
       pads.push(
         new Pad(
-          600 + 160 * j,
+          900 + 160 * j,
           100 + 160 * i,
           freqs[i][j],
           keys[i + j * freqs[i].length]
@@ -26,17 +27,24 @@ function setup() {
       );
     }
   }
-// this is where my visualization will be rendered
-  waveformWindow = createGraphics(400, 300);
+
+  // Create waveform window for frequency spectrum visualization
+
+  waveformWindow = createGraphics(500, 300);
   waveformWindow.background(0);
 }
 
 function draw() {
+  background(0);
+  
+
   for (let i = 0; i < pads.length; i++) {
     pads[i].draw();
   }
 
-  image(waveformWindow, 70, 50);
+  // Draw waveform window
+
+  image(waveformWindow, 100, 50);
 }
 
 function keyPressed() {
@@ -44,6 +52,16 @@ function keyPressed() {
     if (keyCode === keys[i]) {
       pads[i].play();
     }
+  }
+}
+
+function changeWaveform() {
+  let select = document.getElementById('waveformSelect');
+  waveformType = select.value;
+
+  for (let i = 0; i < pads.length; i++) {
+    pads[i].updateWaveformType(waveformType);
+
   }
 }
 
@@ -57,7 +75,7 @@ class Pad {
 
     this.osc = new p5.Oscillator();
     this.osc.amp(0);
-    this.osc.setType("sawtooth");
+    this.osc.setType("sine");
     this.osc.start();
 
     this.envelope = new p5.Envelope();
@@ -110,8 +128,16 @@ class Pad {
     this.envelope.play(this.osc);
   }
 
+  updateWaveformType(type) {
+    this.osc.setType(type);
+  }
+
+
+  // visualization
+
   updateWaveform() {
     let waveform = this.fft.waveform();
+    waveformWindow.clear(); // Clear previous content
     waveformWindow.background(0);
     waveformWindow.stroke(200, 200, 20);
     waveformWindow.strokeWeight(4);
@@ -122,5 +148,23 @@ class Pad {
       waveformWindow.vertex(x, y);
     }
     waveformWindow.endShape();
+    
+    // Draw color-coded frequency spectrum in the waveform window
+    this.drawFrequencySpectrum();
+  }
+
+  drawFrequencySpectrum() {
+    let spectrum = this.fft.analyze();
+    let spectrumWidth = waveformWindow.width / spectrum.length;
+
+    for (let i = 0; i < spectrum.length; i++) {
+      let x = i * spectrumWidth;
+      let h = -waveformWindow.height + map(spectrum[i], 0, 255, waveformWindow.height, 0);
+      let c = color(map(i, 0, spectrum.length, 0, 255), 25, 255); // Color gradient
+
+      // Draw colored bars for each frequency band in the waveform window
+      waveformWindow.fill(c);
+      waveformWindow.rect(x, waveformWindow.height, spectrumWidth, h);
+    }
   }
 }

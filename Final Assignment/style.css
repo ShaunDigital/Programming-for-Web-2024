@@ -10,13 +10,44 @@ html, body {
 
 #canvasText {
   position: absolute;
-  top: 390px;
+  top:400px;
   left: 150px;
-  width: 250px;
+  width: 550px;
   color: rgb(241, 179, 8);
-  font-size: 12px;
+  font-size: 18px;
   padding: 15px;
   z-index: 1; 
   border: 1px solid white;
 }
 
+.selector-container {
+  position: relative; 
+  margin: 20px; 
+}
+
+
+#waveformSelect {
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  border-radius: 5px;
+  background-color: #f1ed01;
+  color: #080808;
+  outline: none; /* Remove the default outline */
+  cursor: pointer;
+  width: 150px; /* Set a specific width for the dropdown */
+  position: absolute; /* Position the dropdown absolutely within the container */
+  top: 250px ; /* Align the dropdown */
+  left: 650px; /* Align the dropdown */
+}
+
+/* Style the options within the select element */
+#waveformSelect option {
+  background-color: #ecaf05;
+  color: #333;
+}
+
+/* Hover effect for options */
+#waveformSelect option:hover {
+  background-color: #0df0b7;
+}
